@@ -15,6 +15,6 @@ public class DoubleAdderTest extends TestCase {
         adder.add(3);
 
         String json = JSON.toJSONString(adder);
-        assertEquals("{\"value\":3.0}", json);
+        assertEquals("{\"value\":3}", json);
     }
 }

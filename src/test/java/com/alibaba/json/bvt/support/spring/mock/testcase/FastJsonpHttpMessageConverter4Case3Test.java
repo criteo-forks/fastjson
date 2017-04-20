@@ -104,7 +104,7 @@ public class FastJsonpHttpMessageConverter4Case3Test {
                 "UTF-8").content(json.toJSONString()).contentType(MediaType.APPLICATION_JSON)));
         actions.andDo(print());
         actions.andExpect(status().isOk()).andExpect(content().contentType(APPLICATION_JAVASCRIPT))
-                .andExpect(content().string("/**/fnUpdateSome({\"name\":\"哈哈哈\",\"id\":123});"));
+                .andExpect(content().string("/**/fnUpdateSome({\"id\":123,\"name\":\"哈哈哈\"});"));
     }
 
     @Test

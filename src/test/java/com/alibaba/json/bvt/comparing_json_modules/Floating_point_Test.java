@@ -9,15 +9,15 @@ import junit.framework.TestCase;
  */
 public class Floating_point_Test extends TestCase {
     public void test_2_1() throws Exception {
-        assertEquals("0.0", JSON.toJSONString(0.0));
+        assertEquals("0", JSON.toJSONString(0.0));
     }
 
     public void test_2_2() throws Exception {
-        assertEquals("-0.0", JSON.toJSONString(-0.0F));
+        assertEquals("-0", JSON.toJSONString(-0.0F));
     }
 
     public void test_2_3() throws Exception {
-        assertEquals("1.0", JSON.toJSONString(1.0));
+        assertEquals("1", JSON.toJSONString(1.0));
     }
 
     public void test_2_4() throws Exception {

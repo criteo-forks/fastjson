@@ -22,6 +22,6 @@ public class JSONPParseTest3 extends TestCase {
         assertEquals("ido)nans", param.get("name"));
 
         String json = JSON.toJSONString(jsonpObject, SerializerFeature.BrowserSecure);
-        assertEquals("/**/parent.callback({\"name\":\"ido\\u0029nans\",\"id\":1},1,2)", json);
+        assertEquals("/**/parent.callback({\"id\":1,\"name\":\"ido\\u0029nans\"},1,2)", json);
     }
 }
