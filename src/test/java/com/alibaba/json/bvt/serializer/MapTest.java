@@ -17,7 +17,7 @@ public class MapTest extends TestCase {
         obj.put("name", "jobs");
         obj.put("id", 33);
         String text = toJSONString(obj);
-        Assert.assertEquals("{'name':'jobs','id':33}", text);
+        Assert.assertEquals("{'id':33,'name':'jobs'}", text);
     }
     
     public void test_null() throws Exception {
