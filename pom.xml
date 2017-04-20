@@ -11,7 +11,7 @@
 -->
 	<groupId>com.alibaba</groupId>
 	<artifactId>fastjson</artifactId>
-	<version>1.2.31-SNAPSHOT</version>
+	<version>1.2.31-criteo</version>
 
 	<packaging>jar</packaging>
 	<name>fastjson</name>
@@ -29,8 +29,8 @@
 	</properties>
 
 	<scm>
-		<url>https://github.com/alibaba/fastjson</url>
-		<connection>scm:git:https://git@github.com/alibaba/fastjson.git</connection>
+		<url>https://github.com/criteo-forks/fastjson</url>
+		<connection>scm:git:https://git@github.com/criteo-forks/fastjson.git</connection>
 	</scm>
 
 	<repositories>
@@ -42,8 +42,8 @@
 	</repositories>
 
 	<organization>
-		<name>Alibaba Group</name>
-		<url>https://github.com/alibaba</url>
+		<name>Criteo</name>
+		<url>https://github.com/criteo/</url>
 	</organization>
 	
 	<developers>
