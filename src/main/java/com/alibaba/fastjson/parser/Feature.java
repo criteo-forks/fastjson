@@ -120,7 +120,13 @@ public enum Feature {
      *
      * disable field smart match, improve performance in some scenarios.
      */
-    DisableFieldSmartMatch
+    DisableFieldSmartMatch,
+
+    /**
+     *
+     * throw an exception when a field is missing when deserializing a JSON object to a provided class.
+     */
+    ExceptionOnMissingBeanPrimitiveField
     ;
 
     Feature(){
