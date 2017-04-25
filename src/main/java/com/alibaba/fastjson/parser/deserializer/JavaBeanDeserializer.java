@@ -666,24 +666,32 @@ public class JavaBeanDeserializer implements ObjectDeserializer {
                 FieldInfo[] fieldInfoList = beanInfo.fields;
                 int size = fieldInfoList.length;
                 Object[] params = new Object[size];
+                boolean throwExceptionOnMissingBeanField = parser.isEnabled(Feature.ExceptionOnMissingBeanPrimitiveField);
                 for (int i = 0; i < size; ++i) {
                     FieldInfo fieldInfo = fieldInfoList[i];
                     Object param = fieldValues.get(fieldInfo.name);
                     if (param == null) {
                         Type fieldType = fieldInfo.fieldType;
                         if (fieldType == byte.class) {
+                            if (throwExceptionOnMissingBeanField) checkIfMissingBeanPrimitiveField(fieldValues, fieldInfo.name);
                             param = (byte) 0;
                         } else if (fieldType == short.class) {
+                            if (throwExceptionOnMissingBeanField) checkIfMissingBeanPrimitiveField(fieldValues, fieldInfo.name);
                             param = (short) 0;
                         } else if (fieldType == int.class) {
+                            if (throwExceptionOnMissingBeanField) checkIfMissingBeanPrimitiveField(fieldValues, fieldInfo.name);
                             param = 0;
                         } else if (fieldType == long.class) {
+                            if (throwExceptionOnMissingBeanField) checkIfMissingBeanPrimitiveField(fieldValues, fieldInfo.name);
                             param = 0L;
                         } else if (fieldType == float.class) {
+                            if (throwExceptionOnMissingBeanField) checkIfMissingBeanPrimitiveField(fieldValues, fieldInfo.name);
                             param = 0F;
                         } else if (fieldType == double.class) {
+                            if (throwExceptionOnMissingBeanField) checkIfMissingBeanPrimitiveField(fieldValues, fieldInfo.name);
                             param = 0D;
                         } else if (fieldType == boolean.class) {
+                            if (throwExceptionOnMissingBeanField) checkIfMissingBeanPrimitiveField(fieldValues, fieldInfo.name);
                             param = Boolean.FALSE;
                         }
                     }
@@ -725,6 +733,12 @@ public class JavaBeanDeserializer implements ObjectDeserializer {
                 childContext.object = object;
             }
             parser.setContext(context);
+        }
+    }
+
+    protected void checkIfMissingBeanPrimitiveField(Map<String, Object> fieldValues, String fieldName) throws JSONException {
+        if (!fieldValues.containsKey(fieldName)) {
+            throw new JSONException("Missing field '" + fieldName + "' to deserialize JSON to type '" + beanInfo.typeName + "'");
         }
     }
 

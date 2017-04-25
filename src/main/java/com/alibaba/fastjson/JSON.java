@@ -99,6 +99,7 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
         features |= Feature.AllowArbitraryCommas.getMask();
         features |= Feature.SortFeidFastMatch.getMask();
         features |= Feature.IgnoreNotMatch.getMask();
+        features |= Feature.ExceptionOnMissingBeanPrimitiveField.getMask();
         DEFAULT_PARSER_FEATURE = features;
     }
 
